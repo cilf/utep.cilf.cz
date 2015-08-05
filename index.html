@@ -2731,6 +2731,18 @@ Naše parta<br>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-
+<script type="text/javascript">
+var kkeys = [], konami = "38,37,40,39";
+$(document).keydown(function(e) {
+  kkeys.push( e.keyCode );
+  if ( kkeys.toString().indexOf( konami ) >= 0 ){
+    $(document).unbind('keydown',arguments.callee);
+    $.getScript('http://www.cornify.com/js/cornify.js',function(){
+      cornify_add();
+      $(document).keydown(cornify_add);
+    });
+  }
+});
+</script>
 
 </body></html>
